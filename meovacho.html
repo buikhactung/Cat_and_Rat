@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Rat(name,weight,speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed =speed;
+        this.status = true;
+        this.void = function () {
+            alert("chit,chit")
+        };
+        this.getWeight = function () {
+            return this.weight
+        };
+        this.setWeight = function (newWeight) {
+            this.weight = newWeight
+        };
+        this.setDead = function () {
+            this.status = false
+        };
+        this.getSpeed = function () {
+            return this.speed;
+        };
+        this.getName = function () {
+            return this.name
+        };
+        this.getStatus = function () {
+            return this.status
+        }
+    }
+    let mouseDuc = new Mouse ('Duc',52,5);
+    let mouseChau = new Mouse ('Chau', 75,4);
+    let mouseHieu = new Mouse ('Hieu',62,7);
+    
+    function Cat (name,maxSpeed,weight) {
+        this.name = name;
+        this.maxSpeed = maxSpeed;
+        this.weight = weight;
+        this.greeting = function () {
+            alert("tên của tôi là: " + this.name);
+        };
+        this.catchMouse = function () {
+            if (this.maxspeed >mouse.getSpeed()) {
+                alert(this.name + " bắt đc con chuột " + mouse.getName());
+            }else alert(this.name+ " không bắt đc con chuột " +mouse.getName())
+        };
+        this.eatMouse = function (Mouse) {
+            if (mouse.getStatus) {
+                this.weight +=mouse.getWeight();
+                mouse.setDead();
+            }
+        }
+    }
+    let catBach = new Cat ('Bach,80,6')
+</script>
+</body>
+</html>
